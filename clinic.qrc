@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/appointments.png</file>
+        <file>images/patients.png</file>
+        <file>images/employees.png</file>
+        <file>images/invoices.png</file>
+        <file>db/sqlite.sql</file>
+        <file>images/print.png</file>
+        <file>images/analysis.png</file>
+        <file>images/admin.png</file>
+    </qresource>
+</RCC>
