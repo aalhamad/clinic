@@ -57,10 +57,13 @@ HEADERS  += mainwindow.h \
     aboutdialog.h
 
 OTHER_FILES += \
-    clinic.pro.user
+    clinic.pro.user \
+    app.rc
 
 FORMS += \
     aboutdialog.ui
 
 RESOURCES += \
     clinic.qrc
+
+RC_FILE = app.rc

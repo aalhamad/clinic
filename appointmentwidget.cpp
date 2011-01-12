@@ -59,13 +59,18 @@ void AppointmentWidget::setupLayout()
     filterComboBox->addItem(tr("Visit Type"), Visit);
 
     filterLineEdit = new QLineEdit;
-    QLabel *filterLabel = new QLabel(tr("&Filter: "));
+
+    QLabel *filterLabel = new QLabel(tr("&Filter:"));
     filterLabel->setBuddy(filterLineEdit);
+
+    QHBoxLayout *filterLayout = new QHBoxLayout;
+    filterLayout->addWidget(filterLabel);
+    filterLayout->addWidget(filterLineEdit);
+    filterLayout->addWidget(filterComboBox);
 
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addWidget(headerLabel, 0, 0);
-    mainLayout->addWidget(filterLabel, 1, 0);
-    mainLayout->addWidget(filterLineEdit, 1, 1);
+    mainLayout->addLayout(filterLayout, 1, 0);
     mainLayout->addWidget(filterComboBox, 1, 2);
     mainLayout->addWidget(appointmentTableView, 2, 0, 1, 0);
     mainLayout->addLayout(buttonLayout, 3, 2);

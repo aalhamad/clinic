@@ -4,7 +4,6 @@ CreateDbWizardPage::CreateDbWizardPage(QWidget *parent) :
     QWizardPage(parent)
 {
     setupLayout();
-    setTitle(tr("Setup Database"));
     connect(changeToolButton, SIGNAL(clicked()), this, SLOT(showOpenFile()));
     connect(createDbCheckBox, SIGNAL(clicked(bool)), this, SLOT(onCreateCheckBoxClicked(bool)));
     setupRegisterFields();
@@ -28,6 +27,10 @@ void CreateDbWizardPage::setupLayout()
     mainLayout->addWidget(changeToolButton, 0, 2);
     mainLayout->addWidget(createDbCheckBox, 1, 1);
     setLayout(mainLayout);
+
+    setTitle(tr("Setup Database"));
+    setSubTitle(tr("Create a database or set the path of an exisiting database. "
+                   "Make sure the database exist if you are setting its path."));
 }
 
 

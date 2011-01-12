@@ -23,6 +23,9 @@ void AdminDbWizardPage::setupLayout()
    formLayout->addRow(tr("Password Confirmation: ") + asterisk, passwordConfirmationLineEdit);
    formLayout->addRow(tr("&Email"), emailLineEdit);
    setLayout(formLayout);
+
+   setTitle(tr("Administration"));
+   setSubTitle(tr("Create a unique username and password for the use of the admistration."));
 }
 
 void AdminDbWizardPage::setupRegisterFields()

@@ -6,6 +6,8 @@
         <file>images/invoices.png</file>
         <file>db/sqlite.sql</file>
         <file>images/print.png</file>
+        <file>images/watermark.png</file>
+        <file>images/logo.png</file>
         <file>images/analysis.png</file>
         <file>images/admin.png</file>
     </qresource>

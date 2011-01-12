@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain(Globals::OrganizationDomainName);
     app.setApplicationName(Globals::ApplicationName);
 
-    QStringList librarys;
-    librarys << QCoreApplication::applicationDirPath() + "/plugins";
-    qApp->setLibraryPaths(librarys);
+//    QStringList librarys;
+//    librarys << QCoreApplication::applicationDirPath() + "/plugins";
+//    qApp->setLibraryPaths(librarys);
 
     MainWindow w;
     w.show();

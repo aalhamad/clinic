@@ -163,6 +163,8 @@ void MainWindow::createDatabaseWizard()
     wizard.addPage(new IntroDbWizardPage());
     wizard.addPage(new CreateDbWizardPage());
     wizard.addPage(new AdminDbWizardPage());
+    wizard.setPixmap(QWizard::LogoPixmap, QPixmap(":/images/logo.png"));
+
     if(wizard.exec())
     {
 
