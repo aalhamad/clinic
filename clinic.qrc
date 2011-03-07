@@ -10,5 +10,7 @@
         <file>images/analysis.png</file>
         <file>images/admin.png</file>
         <file>images/logo.png</file>
+        <file>invoice_template/style.css</file>
+        <file>invoice_template/invoice.html</file>
     </qresource>
 </RCC>

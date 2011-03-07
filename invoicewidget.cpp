@@ -70,6 +70,7 @@ void InvoiceWidget::setupLayout()
 
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->addWidget(headerLabel, 0, 0);
+    mainLayout->addWidget(printButton, 0, 2, Qt::AlignRight);
     mainLayout->addLayout(filterLayout, 1, 0);
     mainLayout->addWidget(filterLineEdit, 1, 1);
     mainLayout->addWidget(filterComboBox, 1, 2);
@@ -180,27 +181,20 @@ void InvoiceWidget::printPreview(QPrinter *printer)
     QString visitType = record.field("type").value().toString();
 
     QTextDocument textDoc;
-    QString top= "<html><body>";
-    QString header_1 = trUtf8("<h1>عيادة العلاج الطبيعي التخصصية</h1>");
-    QString header_2 = "<h1>Specialized Clinic for Physical Therapy</h1>";
-    QString title = "<h2>Invoice Voucher</h2>";
-    QString table = "<Table>"
-                    "<tr>"
-                    "<td>Name:</td><td>"+ fullname +"</td>"
-                    "</tr>"
-                    "<tr>"
-                    "<td>Date: </td><td>"+ datetime.date().toString("MMMM dd yyyy") + "</td>"
-                    "<td>Time: </td><td>"+ datetime.time().toString("h:mm AP") + "</td>"
-                    "</tr>"
-                    "<tr>"
-                    "<td>Price: </td><td>"+ price + "</td>"
-                    "<td>Visit Type: </td><td>"+ visitType + "</td>"
-                    "</tr>"
-                    "</table>";
-    QString bottom = "</body></html>";
 
-    QString html = top + header_1 + header_2 + title + table + bottom;
+    QFile file_html(":/invoice_template/invoice.html");
+    if (!file_html.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
 
+    QString html = file_html.readAll();
+
+    QFile file_css(":/invoice_template/style.css");
+    if(!file_css.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QString css = file_css.readAll();
+
+    textDoc.setDefaultStyleSheet(css);
     textDoc.setHtml(html);
     textDoc.print(printer);
 }

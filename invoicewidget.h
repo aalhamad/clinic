@@ -17,6 +17,7 @@
 #include <QPrinter>
 #include <QTextDocument>
 #include <QSortFilterProxyModel>
+#include <QFile>
 #include "invoicedialog.h"
 #include "user.h"
 

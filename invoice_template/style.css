@@ -1,0 +1,108 @@
+html {margin:0;padding:0;border:0;}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;} 
+body {line-height:1.3;background:white;}
+table {border-collapse:separate;border-spacing:0;}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 950px;
+	margin: 0 auto;
+}
+
+#address {
+	width: 950px;
+	float:left;
+	font-size: 14px;
+}
+
+.line-header hr {
+	background-color: #341096;
+	width:950px;
+	float:left;
+}
+
+.thick hr {
+	height: 3px;
+}
+
+.thin hr{
+	height: 1px;
+}
+
+
+#header {
+	width:950px;
+	margin-right:0;
+}
+
+#logo {
+	width:700px;
+	float:left;
+	margin-right:10px;	
+}
+
+#invoice {
+	width:240px;
+	float:left;
+	margin-right:10px;
+	margin-right:0;
+	padding-right:0;
+}
+
+#middle {
+	width: 950px;
+	margin-right: 0;
+}
+
+#patient {
+	width: 600px;
+	float:left;
+}
+
+#details {
+	width: 340px;
+	float: left;
+}
+
+.title {
+	font: bold 48px sans-serif;
+	color: #341096;
+}
+
+.price {
+	font-weight: bold;
+}
+
+#footer {
+	width: 950px;
+	margin-right: 0;	
+}
+
+#wishes-eng {
+	width: 300px;
+	float: left;
+	font: italic small-caps normal 1.5em Arial, sans-serif;	
+	margin-right: 400px;
+}
+
+#wishes-ar {
+	width: 200px;
+	float: left;
+	font: italic small-caps normal 1.5em Arial, sans-serif;	
+}
+
+#last {
+	width: 950px;
+	margin-right: 0;	
+}
+
+#info-all {
+	width: 800px;
+	float: left;
+	font-size: 12px;
+}

@@ -1,11 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <body>	
-    <div id="address-english">
-      <ul>
-	<li>Dr. Aisha Clinic</li>
-	<li>Salmiya Str.38</li>
-	<li>Telephone</li>
-      </ul>
-    </div>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css"> 
+    
+</head>
+  <body>
+	
+	<div id="container">
+		<div id="header">
+			<div id="logo">
+				<img src=":/invoice_template/logo.png" alt="Logo" />
+			</div> <!-- end logo -->	
+			<div id="invoice">
+				<ul>
+					<li class="title">INVOICE</li>
+					<li>#{Invoice number }</li>
+					<li>Date: { Date now }</li>
+				</ul>
+			</div> <!-- end invoice -->
+		</div> <!-- end header -->
+			
+		<div id="address">
+	      <ul>
+			<li>{ Company Address }</li>
+			<li>Phone: {Phone Ext} Direct: {Phone} Mobile: {Mobile}</li>
+			<li>Email: { Email address }</li>
+			<li>Website: { Website address }</li>
+	      </ul>
+	    </div> <!-- end address english -->
+
+		<div class="line-header thick">
+			<hr />
+		</div>
+		
+		<div id="middle">
+			<div id="patient">
+				<ul>
+					<li>Name: { Patient Name }</li>
+					<li>Civil ID: { Patient Civil Id }</li>
+					<li>File Number: { Patient File Number }</li>
+				</ul>
+			</div> <!-- end of patient -->
+
+			<div id="details">
+				<ul>
+					<li>Visit Type: { Visit Type }</li>
+					<li>Price: <span class="price">{ Price } KD</span></li>
+					<li>Sorry no refunds -- عذراً المبلغ المدفوع غير قابل للرد </li>
+				</ul>
+			</div> <!-- end of details -->
+		</div> <!-- end middle -->
+		
+		<div class="line-header thin">
+			<hr />
+		</div>
+			
+		<div id="footer">
+			<div id="wishes-eng">
+				We wish you years of uninterrupted good health 
+			</div>
+
+			<div id="wishes-ar">
+نتمنى لكم دوام الصحة				
+			</div>
+									
+			<div id="last">
+				<div id="info">
+					
+				</div>
+			</div>
+		</div> <!-- end footer -->		
+	</div> <!-- end container -->
   </body>
 </html>
