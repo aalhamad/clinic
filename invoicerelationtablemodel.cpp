@@ -13,8 +13,10 @@ QVariant InvoiceRelationTableModel::data(const QModelIndex &item, int role) cons
         QDateTime date  = QSqlTableModel::data(item, role).toDateTime();
         return date.toString("MMMM dd yyyy h:mm AP");
     }
+
     else
     {
         return QSqlTableModel::data(item, role);
     }
 }
+

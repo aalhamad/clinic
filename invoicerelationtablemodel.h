@@ -10,7 +10,6 @@ class InvoiceRelationTableModel : public QSqlRelationalTableModel
 public:
     explicit InvoiceRelationTableModel(QObject *parent = 0, QSqlDatabase db = QSqlDatabase());
     QVariant data(const QModelIndex &item, int role) const;
-
 };
 
 #endif // INVOICEMODEL_H

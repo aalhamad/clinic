@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     analysiswidget.cpp \
     adminwidget.cpp \
     admindbwizardpage.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    invoice.cpp
 
 HEADERS  += mainwindow.h \
     usersettingsdialog.h \
@@ -54,7 +55,8 @@ HEADERS  += mainwindow.h \
     analysiswidget.h \
     adminwidget.h \
     admindbwizardpage.h \
-    aboutdialog.h
+    aboutdialog.h \
+    invoice.h
 
 OTHER_FILES += \
     clinic.pro.user \

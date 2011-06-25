@@ -20,6 +20,7 @@
 #include <QFile>
 #include "invoicedialog.h"
 #include "user.h"
+#include "invoice.h"
 
 class InvoiceWidget : public QWidget
 {
@@ -45,6 +46,7 @@ private:
     void setupLayout();
     void setupModel(QSqlRelationalTableModel *model);
     void setupTableView(QSqlRelationalTableModel *model);
+    QString createHtmlInvoice(const Invoice& invoice);
 
     QLabel *headerLabel;
     QTableView *invoiceTableView;
@@ -60,7 +62,7 @@ private:
 
     QSortFilterProxyModel *invoiceSortModel;
 
-    enum {Id, Patient, Date, Price, Visit};
+    enum {Id, Patient, Date, Price, Visit, CivilID};
     enum { DEFAULT_PRINT_WIDTH = 25, DEFAULT_PRINT_HEIGH = 25 };
 
     User m_user;

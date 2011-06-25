@@ -182,11 +182,9 @@ void InvoiceWidget::printPreview(QPrinter *printer)
 
     QTextDocument textDoc;
 
-    QFile file_html(":/invoice_template/invoice.html");
-    if (!file_html.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
+    Invoice invoice(fullname, datetime, price, visitType);
 
-    QString html = file_html.readAll();
+    QString html = createHtmlInvoice(invoice);
 
     QFile file_css(":/invoice_template/style.css");
     if(!file_css.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -209,4 +207,35 @@ void InvoiceWidget::onFilterLineEditChanged()
 {
     QRegExp regRxp(filterLineEdit->text(), Qt::CaseInsensitive);
     invoiceSortModel->setFilterRegExp(regRxp);
+}
+
+QString InvoiceWidget::createHtmlInvoice(const Invoice &invoice)
+{
+    QString clinic_image(":/invoice_template/clinic-name-ar.png");
+    QString logo(":/invoice_template/logo.png");
+    QString no_refunds(":/invoice_template/no-refunds.png");
+    QString good_health(":/invoice_template/good-health.png");
+
+    QString doc_type = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">";
+    QString head = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>";
+    QString top = "<body>";
+    QString container = "<div id=\"container\">";
+    QString header = "<div id=\"header\"><div id=\"logo\"><img src="+ logo +"></div>"
+                     "<div id=\"invoice\"><ul><li class=\"title\">INVOICE</li></ul></div></div>";
+
+    QString address = "<div id=\"address\"><ul><li>address</li></ul></div><div class=\"line-header thick\"><hr /></div>";
+
+    QString middle = "<div id=\"middle\">";
+    QString patient = "<div id =\"patient\"><ul><li>Name: " + invoice.getFullname() + "</li></ul></div>";
+    QString details = "<div id =\"details\"><ul><li>Visit Type: " + invoice.getVisitType() + "</li>"
+                      "<li>Price: "+ invoice.getPrice() +" KD <li>"
+                      "<li><img src="+ no_refunds +"></li></ul></div></div><div class=\"line-header thin\"><hr /></div>";
+
+    QString footer = "<div id=\"footer\"><div id=\"wishes-eng\">We wish you years of uninterrupted good health</div>"
+                     "<div id=\"wishes-ar\"><img src="+ good_health +"></div></div>";
+
+    QString bottom = "</div></div></body></html>";
+
+    QString html = doc_type + head + top + container + header + address + middle + patient + details + footer + bottom;
+    return html;
 }
