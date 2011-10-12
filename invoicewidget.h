@@ -46,7 +46,7 @@ private:
     void setupLayout();
     void setupModel(QSqlRelationalTableModel *model);
     void setupTableView(QSqlRelationalTableModel *model);
-    QString createHtmlInvoice(const Invoice& invoice);
+    void createInvoice(QTextDocument *doc, const Invoice& invoice);
 
     QLabel *headerLabel;
     QTableView *invoiceTableView;
@@ -61,6 +61,8 @@ private:
     QStatusBar *mainWindowStatusBar;
 
     QSortFilterProxyModel *invoiceSortModel;
+
+    QTextDocument *textDoc;
 
     enum {Id, Patient, Date, Price, Visit, CivilID};
     enum { DEFAULT_PRINT_WIDTH = 25, DEFAULT_PRINT_HEIGH = 25 };

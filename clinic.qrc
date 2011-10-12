@@ -13,8 +13,9 @@
         <file>invoice_template/invoice.html</file>
         <file>invoice_template/clinic-name-ar.png</file>
         <file>invoice_template/logo.png</file>
-        <file>invoice_template/style.css</file>
         <file>invoice_template/no-refunds.png</file>
         <file>invoice_template/good-health.png</file>
+        <file>invoice_template/address-en.png</file>
+        <file>invoice_template/style.css</file>
     </qresource>
 </RCC>
